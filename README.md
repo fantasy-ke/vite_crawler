@@ -66,8 +66,13 @@ pyinstaller vite_crawler.spec
 ```
 dist/
 ├── vite_crawler.exe   # 主程序
-└── config.ini         # 配置文件(需要根据实际情况修改)
+└── config.ini         # 配置文件会自动创建（如果不存在）
 ```
+
+注意：
+1. 首次运行会在程序目录下自动创建默认配置文件
+2. 可以直接修改config.ini来自定义配置
+3. 配置文件使用UTF-8编码
 
 ### 运行说明
 
