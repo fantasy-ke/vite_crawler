@@ -35,11 +35,18 @@ pip install -r requirements.txt
 
 直接运行Python脚本:
 ```
-python vite_crawler.py
+python  ./src/main.py
+```
+
+### 基本用法
+
+直接运行打包脚本:
+```
+.\vite_crawler.exe
 ```
 
 ### ini配置说明
-配置文件(config.ini)包含以下参数:
+配置文件(/config/config.ini)包含以下参数:
 ```
 [DEFAULT]
 # 爬虫起始URL
@@ -65,8 +72,9 @@ pyinstaller vite_crawler.spec
 打包后的部署文件结构：
 ```
 dist/
-├── vite_crawler.exe   # 主程序
-└── config.ini         # 配置文件会自动创建（如果不存在）
+├── config/
+│   └── config.ini    # 这是可以修改的配置文件
+└── vite_crawler.exe
 ```
 
 注意：
@@ -99,4 +107,4 @@ MIT License
 
 ## 联系方式
 
-如有问题，请通过Issue与我们联系。
+如有问题，请通过Issue与我联系。
