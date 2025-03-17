@@ -1,0 +1,15 @@
+build/vite_crawler/Analysis-00.toc
+build/vite_crawler/base_library.zip
+build/vite_crawler/EXE-00.toc
+build/vite_crawler/PKG-00.toc
+build/vite_crawler/PYZ-00.pyz
+build/vite_crawler/PYZ-00.toc
+build/vite_crawler/vite_crawler.pkg
+build/vite_crawler/warn-vite_crawler.txt
+build/vite_crawler/xref-vite_crawler.html
+build/vite_crawler/localpycs/pyimod01_archive.pyc
+build/vite_crawler/localpycs/pyimod02_importers.pyc
+build/vite_crawler/localpycs/pyimod03_ctypes.pyc
+build/vite_crawler/localpycs/pyimod04_pywin32.pyc
+build/vite_crawler/localpycs/struct.pyc
+dist/vite_crawler.exe

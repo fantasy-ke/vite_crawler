@@ -4,7 +4,7 @@ import sys
 from bs4 import BeautifulSoup
 import configparser  # 必须添加此行
 from urllib.parse import urljoin, urlparse
-from pathvalidate import sanitize_filepath
+from pathvalidate import sanitize_filepath, replace_symbol
 
 class ViteSiteCrawler:
     def __init__(self):
@@ -110,17 +110,23 @@ class ViteSiteCrawler:
     def _get_file_path(self, url, ext=None):
         parsed_url = urlparse(url)
         path = parsed_url.path
-        if not ext:
-            ext = os.path.splitext(path)[1] or '.html'
+        # 清理 netloc（替换非法字符）
+        safe_netloc = replace_symbol(parsed_url.netloc, replacement_text="_")  # 将 : 替换为 _
+        # 生成安全路径
         filename = os.path.basename(path) or 'index.html'
         filename = sanitize_filepath(filename)
-        dir_path = os.path.dirname(path)
-        if dir_path == '/':
-            dir_path = ''
-
-        full_dir = os.path.join(self.output_dir, parsed_url.netloc, dir_path.lstrip('/'))
+        dir_path = os.path.dirname(path).lstrip('/')
+        
+        # 构建完整路径
+        full_dir = os.path.join(
+            self.output_dir,
+            safe_netloc,  # 使用清理后的 netloc
+            dir_path
+        )
+        
+        # 确保路径合法
         os.makedirs(full_dir, exist_ok=True)
-        return os.path.join(full_dir, filename + ext if not os.path.splitext(filename)[1] else filename)
+        return os.path.join(full_dir, filename + (ext or ''))
 
     def _save_text_file(self, file_path, content):
         with open(file_path, 'w', encoding='utf-8') as f:
