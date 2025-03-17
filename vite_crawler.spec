@@ -2,10 +2,10 @@
 
 
 a = Analysis(
-    ['vite_crawler.py'],
+    ['./src/main.py'],
     pathex=[],
     binaries=[],
-    datas=[('config.ini', '.'), ('E:\Program Files\Python\Python312\Lib\site-packages\pathvalidate', 'pathvalidate')],
+    datas=[('./config/config.ini', '.'), ('E:\Program Files\Python\Python312\Lib\site-packages\pathvalidate', 'pathvalidate')],
     hiddenimports=['pathvalidate'],
     hookspath=[],
     hooksconfig={},
