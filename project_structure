@@ -1,0 +1,22 @@
+vite_crawler/
+├── src/
+│   ├── __init__.py
+│   ├── crawler/
+│   │   ├── __init__.py
+│   │   ├── site_crawler.py      # 核心爬虫逻辑
+│   │   └── url_handler.py       # URL处理相关
+│   ├── utils/
+│   │   ├── __init__.py
+│   │   ├── config_loader.py     # 配置加载
+│   │   └── file_handler.py      # 文件处理
+│   └── main.py                  # 主入口文件
+├── config/
+│   └── config.ini              # 配置文件
+├── tests/
+│   ├── __init__.py
+│   └── test_crawler.py         # 测试文件
+├── docs/
+│   └── README.md              # 文档
+├── requirements.txt
+├── LICENSE
+└── setup.py                   # 打包配置 
