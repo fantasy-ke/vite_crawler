@@ -16,7 +16,7 @@ setup(
         ],
     },
     author="fantasy-ke",
-    author_email="your.email@example.com",
+    author_email="fantasyke@qq.com",
     description="A web crawler for downloading website content",
     long_description=open('README.md').read(),
     long_description_content_type="text/markdown",
